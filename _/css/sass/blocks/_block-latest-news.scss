@@ -1,0 +1,223 @@
+.latest-news{
+  margin-bottom: 6.25rem;
+
+  &__head{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.875rem;
+
+
+    &--title{
+      font-family: $BOG-Headline-semiBold;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $black;
+      margin: 0;
+    }
+
+    &--see-more{
+      text-decoration: none;
+      color: #45484C;
+      font-family: $BOG-medium;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: $transition;
+
+      &:hover{
+        color: $orange;
+      }
+    }
+  }
+
+  &__tab{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 2.625rem;
+  }
+
+  &__tab-item{
+
+    .active {
+      color: $orange !important;
+    }
+
+    &--btn{
+      color: #B1B1B1;
+      font-family: $BOG-medium;
+      font-size: 1rem;
+      font-weight: 500;
+      &:hover{
+        color: $orange;
+      }
+
+    }
+  }
+
+
+  &__content{
+    position: relative;
+  }
+
+  &__posts-listing{
+    padding-bottom: 3.375rem;
+    position: relative;
+    transition: 0.5s;
+
+    &:hover{
+      .latest-news__post-title{
+        color: $orange;
+      }
+
+      .latest-news__bottom-line {
+        transition: 0.5s;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          transform-origin: left;
+          background: $orange;
+          animation: lineAnimate 1s ease;
+        }
+
+        @keyframes lineAnimate {
+          0% {
+           transform: scaleX(0);
+          }
+          100% {
+            transform: scaleX(1);
+            transform-origin: left;
+          }
+
+        }
+      }
+
+      .latest-news__line-arrow{
+        transition: 0.5s;
+        &:after{
+          content: "";
+          display: flex;
+          width: 15px;
+          height: 2px;
+          position: absolute;
+          right: 7px;
+          bottom: 95px;
+          background: $black;
+          animation: lineAnimateArrow 0.5s linear;
+        }
+
+        @keyframes lineAnimateArrow {
+          0%{
+            transform: scaleX(0);
+            transform-origin: right;
+          }
+          100% {
+            transform: scaleX(1);
+            transform-origin: right;
+          }
+
+        }
+      }
+    }
+  }
+
+  &__post-date{
+    gap: 0.75rem;
+
+    span{
+      color: $black;
+      font-family: $BOG-regular;
+      font-size: 0.875rem;
+      font-weight: 400;
+    }
+  }
+
+  &__title-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__post-title{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $black;
+    font-family:$BOG-Headline-semiBold;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: $transition;
+
+  }
+
+  &__line-arrow{
+
+    &:after{
+      content: "";
+      display: flex;
+      width: 15px;
+      height: 2px;
+      position: absolute;
+      right: 7px;
+      bottom: 95px;
+      animation: lineAnimateArrowOut 0.5s linear;
+    }
+
+    @keyframes lineAnimateArrowOut {
+      0%{
+        transform: scaleX(1);
+        transform-origin: right;
+        background: $black;
+      }
+      100% {
+        transform: scaleX(0);
+        transform-origin: right;
+      }
+
+    }
+  }
+
+  &__arrow-img{
+    width: 24px;
+    height: 24px;
+
+  }
+
+
+  &__bottom-line{
+    transition: 0.5s;
+    width: 100%;
+    height: 1px;
+    background: #DADADA;
+    margin-top: 25px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      transform-origin: left;
+      animation: lineAnimateOut 0.5s ease;
+    }
+
+    @keyframes lineAnimateOut {
+      0% {
+        transform: scaleX(1);
+        transform-origin: left;
+        background: $orange;
+      }
+      100% {
+        transform: scaleX(0);
+      }
+
+    }
+  }
+
+
+
+
+}
+

@@ -1,0 +1,222 @@
+.last-highlights {
+  margin: 5rem 0 7.5rem 0;
+
+
+  &__start{
+    padding-bottom: 1.6875rem;
+  }
+
+  &__title{
+    font-family: $BOG-Headline-Bold;
+    font-size: 2.5rem;
+  }
+
+  &__see-details{
+    text-decoration: none;
+    font-family: $BOG-medium;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #45484C;
+    transition: $transition;
+
+    &:hover{
+      color: $orange;
+    }
+  }
+
+  &__grid-layout{
+    padding: 0;
+  }
+
+  &__card{
+    overflow: hidden;
+    height: 236px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 0px 0px rgba(181, 181, 181, 0.10), 0px 2px 4px 0px rgba(181, 181, 181, 0.10), 0px 8px 8px 0px rgba(181, 181, 181, 0.09), 0px 17px 10px 0px rgba(181, 181, 181, 0.05), 0px 31px 12px 0px rgba(181, 181, 181, 0.01), 0px 48px 14px 0px rgba(181, 181, 181, 0.00);
+  }
+  &__big-card{
+    position: relative;
+    padding: 10px;
+    gap: 20px;
+
+    &:nth-child(1) {
+      .card {
+        background: $orange;
+      }
+
+      .icon-date-time{
+        color: $white;
+        font-size: 1rem;
+        &:before{
+          content: "";
+          background-image: url("../img/calendar-clock.svg");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          width: 4%;
+          height: 24px;
+        }
+      }
+
+      .card-title{
+        font-size: 1.5rem;
+        color: $white;
+        font-weight: 500;
+        font-family: $BOG-medium;
+      }
+
+      .card-text-number{
+        color: $white;
+        font-family: $BOG-Headline-semiBold;
+        font-size: 48px;
+      }
+      .card-text-postfix{
+        color: $white;
+        font-family: $BOG-Headline-semiBold;
+        font-size: 48px;
+      }
+
+
+
+      .card-text-note{
+        color: rgba(255, 255, 255, 0.80);
+        font-family: $BOG-regular;
+        font-size: 0.75rem;
+        font-weight: 400;
+        width: 65%;
+      }
+
+      .visual {
+        bottom: 32px;
+        position: relative;
+        right: 38px;
+      }
+    }
+
+      &:nth-child(2) {
+        .card {
+        background: $DarkOrchid;
+          z-index: 2;
+      }
+
+      .icon-date-time{
+        color: $white;
+        font-size: 1rem;
+        &:before{
+          content: "";
+          background-image: url("../img/calendar-clock.svg");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+          width: 4%;
+          height: 24px;
+        }
+      }
+
+      .card-title{
+        font-size: 1.5rem;
+        color: $white;
+        font-weight: 500;
+        font-family: $BOG-medium;
+      }
+      .card-text-number{
+        color: $white;
+        font-family: $BOG-Headline-semiBold;
+        font-size: 48px;
+      }
+
+      .card-text-postfix{
+        color: $white;
+        font-family: $BOG-Headline-semiBold;
+        font-size: 48px;
+      }
+
+        .card-text-note{
+        color: rgba(255, 255, 255, 0.80);
+        font-family: $BOG-regular;
+        font-size: 0.75rem;
+        font-weight: 400;
+        width: 65%;
+      }
+
+      .visual {
+        width: 236.877px;
+        height: 177.658px;
+        bottom: -33px;
+        z-index: 1;
+        position: relative;
+      }
+    }
+  }
+
+  &__normal-card{
+    position: relative;
+    padding: 10px;
+  }
+
+  &__body{
+    padding: 2rem;
+  }
+
+  &__date-and-time{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: flex-end;
+    font-family: $BOG-regular;
+    font-weight: 400;
+    font-size: 0.875rem;
+
+      &:before{
+        content: "";
+        background-image: url("../img/calendar-clock-black.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 4%;
+        height: 24px;
+    }
+
+  }
+
+  &__content{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__portray{
+    h5{
+      font-family:$BOG-Headline-medium;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: $black;
+    }
+
+    span{
+      font-family: $BOG-Headline-semiBold;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $black;
+    }
+
+    p{
+      font-family: $BOG-regular;
+      font-size: 12px;
+      font-weight: 400;
+      color: #737373;
+      width: 70%;
+    }
+  }
+
+  &__design{
+    position: absolute;
+    right: -6px;
+    bottom: 0;
+  }
+
+  &__visual-icon{
+    width: 116px;
+    height: 110px;
+    object-fit: contain;
+  }
+}

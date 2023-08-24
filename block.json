@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "wpvip_example/build/hello-block",
+  "title": "Hello Block",
+  "icon": "shield",
+  "category": "common",
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "render": "file:./render.php",
+  "editor_script": "file:./build/hello-block.js"
+}

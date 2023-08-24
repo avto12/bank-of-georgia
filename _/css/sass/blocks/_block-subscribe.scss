@@ -1,0 +1,45 @@
+.subscribe{
+  background: #F4F4F4;
+  padding: 3.0625rem 11.125rem 3.0625rem 10.0625rem;
+
+  &__image{
+    text-align: start;
+
+    img {
+      width: 22.25rem;
+      height: 22.25rem;
+      object-fit: contain;
+    }
+  }
+
+  &__newspaper{
+
+    &--title{
+      color: $black;
+      font-family: $BOG-Headline-semiBold;
+      font-size: 2.0rem;
+      font-weight: 600;
+    }
+
+    &--paragraph{
+      color: $black;
+      font-family: $BOG-regular;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 3.5rem;
+    }
+
+    &--btn{
+      text-decoration: none;
+      color: $white;
+      padding: 0.75rem 3.125rem;
+      border-radius: 1.5625rem;
+      background: $orange;
+      white-space: nowrap;
+
+      &:hover{
+        color: $white;
+      }
+    }
+  }
+}

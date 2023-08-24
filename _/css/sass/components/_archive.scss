@@ -1,0 +1,152 @@
+.archive-post {
+  &__title {
+    font-weight: 500;
+    font-size: 5rem;
+    line-height: 5.5rem;
+    padding: 3rem 0;
+    margin-bottom: 1.5rem;
+
+    @media all and (max-width: $tabletScreen) {
+      font-size: 3.5rem;
+      line-height: 4rem;
+      padding: 2rem 0;
+      margin-bottom: 2.5rem;
+    }
+
+  }
+
+  &__card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem 3.125rem;
+    margin-bottom: 5rem;
+
+    @media all and (max-width: $tabletScreen) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__card-main {
+    display: flex;
+    gap: 1.9375rem;
+    grid-column: 1 / -1;
+
+    @media all and (max-width: $tabletScreen) {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    &-image {
+      width: 44.375rem;
+      height: 24.3125rem;
+      object-fit: cover;
+      @media all and (max-width: $tabletScreen) {
+        width: 100%;
+        height: 13.3125rem;
+      }
+    }
+
+    .archive-post__card-info p {
+      max-width: 17.6875rem;
+      @media all and (max-width: $tabletScreen) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__card-publish {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6875rem;
+
+    &-divider {
+      width: 0.25rem;
+      height: 0.25rem;
+      border-radius: 100px;
+    }
+  }
+
+  &__card-info {
+    &-category {
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      opacity: 0.6;
+      text-decoration: none;
+      transition: .2s;
+
+      &:hover {
+        color: $green;
+        opacity: 1;
+      }
+    }
+
+    &-date {
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.125rem;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    h2 {
+      a {
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1.9375rem;
+        text-decoration: none;
+        margin-bottom: 0.6875rem;
+        transition: .2s;
+        width: 100%;
+        display: block;
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+
+    p {
+      font-weight: 300;
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      margin: 0;
+    }
+  }
+
+
+  &__card-secondary {
+    img {
+      margin-bottom: 1.25rem;
+      width: 100%;
+      height: 13.3125rem;
+      object-fit: cover;
+    }
+  }
+
+  &__wrapper {
+    text-align: center;
+    margin-bottom: 3.75rem;
+  }
+
+  &__btn {
+    padding: 0.875rem 2rem;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    text-decoration: none;
+    gap: 0.625rem;
+    align-items: center;
+
+    &:hover {
+    }
+  }
+}

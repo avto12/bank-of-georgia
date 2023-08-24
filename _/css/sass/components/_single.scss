@@ -1,0 +1,121 @@
+.post-single {
+  &__info {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.3125rem;
+  }
+
+  &__category {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: .2s;
+
+    &:hover {
+      color: $green;
+      opacity: 1;
+    }
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 3.1875rem;
+    text-align: center;
+    max-width: 46.875rem;
+    margin: 0 auto 3rem;
+    @media all and (max-width: $tabletScreen) {
+      font-size: 2rem;
+      line-height: 2.5625rem;
+      text-align: left;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 37.5rem;
+    object-fit: cover;
+    margin-bottom: 3rem;
+    @media all and (max-width: $tabletScreen) {
+      height: 13.3125rem;
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  &__content {
+    max-width: 62.5rem;
+    margin: 0 auto;
+    margin-bottom: 7rem;
+
+    a {
+      color: $green;
+    }
+  }
+
+  &__related {
+    margin-bottom: 3.1875rem;
+
+    &-title {
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 2.5625rem;
+      margin-bottom: 3.84375rem;
+      @media all and (max-width: $tabletScreen) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.125rem;
+      @media all and (max-width: $tabletScreen) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &-card {
+      .post-single__info {
+        margin-bottom: 0.6875rem;
+        justify-content: start;
+      }
+
+      &-image {
+        height: 13.3125rem;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 1.25rem;
+      }
+
+      &-title {
+        a {
+          font-weight: 400;
+          font-size: 24px;
+          line-height: 130%;
+          margin: 0;
+          text-decoration: none;
+          transition: .2s;
+
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+    }
+  }
+}

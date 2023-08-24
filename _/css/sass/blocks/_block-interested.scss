@@ -1,0 +1,92 @@
+.interested{
+  background: $black;
+  padding: 5.3125rem 0;
+
+  &__section-title{
+    color: $white;
+    font-family: $BOG-Headline-semiBold;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-bottom: 2.4375rem;
+  }
+
+  &__section-content{
+      &:hover{
+          &:nth-child(3n + 2){
+            .interested__animation-image{
+              transform: translate(-30px, -100px);
+            }
+          }
+      }
+  }
+
+  &__section-card{
+    position: relative;
+    height: 25rem;
+    padding-top: 2rem;
+    overflow: hidden;
+    border-radius: 1.5625rem;
+    border: none;
+    background: $white;
+    &:hover{
+      .interested__link-wrapper{
+        transform: translate(0, 8px);
+      }
+      .interested__card-title{
+        transform: translate(0, 0) scale(1.0);
+      }
+      .interested__animation-image{
+        transform: translate(0px, 0);
+      }
+
+    }
+  }
+
+  &__animation-image{
+    width: 330px;
+    height: 210px;
+    object-fit: contain;
+    position: absolute;
+    left: -1px;
+    transition: 0.6s;
+    transform: translate(-100px, 0px);
+  }
+
+  &__view-content{
+    position: absolute;
+    bottom: 2.0625rem;
+    padding: 0 32px 0 32px;
+  }
+  &__card-title{
+    color: $black;
+    font-family: $BOG-Headline-medium;
+    font-size: 1.25rem;
+    font-weight: 500;
+    transition: 0.6s;
+    transform: translate(0px, 10px) scale(0.9);
+  }
+
+  &__link-wrapper{
+    transition: 0.6s;
+    transform: translate(0px, 60px);
+  }
+
+  &__redirect-view{
+    font-family: $BOG-regular;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: $black;
+    transition: 0.3s;
+    &:hover{
+      color: $orange;
+    }
+  }
+
+  &__arrow-img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+
+}
