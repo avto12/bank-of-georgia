@@ -9,9 +9,11 @@
  * @package msbase
  */
 
+$menus = ms_getMenuItemes();
+
+
 $footer_logo = get_field('footer_logo', 'option');
 $footer_custom_text = get_field('footer_custom_text', 'option');
-$menu_link = get_field('menu_link', 'option');
 $socials_network = get_field('socials_network', 'option');
 
 
@@ -37,20 +39,18 @@ $socials_network = get_field('socials_network', 'option');
             <div class="footer__menu">
                 <nav class="footer__footer-menu-nav">
                     <ul class="footer__footer-menu-list">
-                    <?php if (isset($menu_link) && $menu_link): ?>
-                        <?php foreach ($menu_link as $footer_menu): ?>
-                            <?php if (isset($footer_menu["link"]) && $footer_menu["link"]): ?>
+                        <?php if(isset($menus['menu']['footer-menu'])): ?>
+                            <?php foreach($menus['menu']['footer-menu'] as $menu): ?>
                                 <li>
-                                    <a href="<?= $footer_menu["link"]["url"]; ?>"
-                                        class="footer__footer-menu-link"
-                                        target="<?= $footer_menu["link"]["target"]; ?>">
-                                        <?php echo  esc_html($footer_menu["link"]["title"]); ?>
+                                    <a href="<?= $menu->url ?>"
+                                       class="footer__footer-menu-link">
+                                        <?= $menu->title ?>
                                     </a>
                                 </li>
-                            <li class="footer__horizontal-line">|</li>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
+                                <li class="footer__horizontal-line">|</li>
+                            <?php endforeach;
+                        endif;
+                        ?>
                     </ul>
                 </nav>
             </div>

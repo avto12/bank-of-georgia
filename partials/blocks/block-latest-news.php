@@ -8,17 +8,16 @@ $last_news = get_field('last_news');
 $announcements_title = get_field('announcements_title');
 $announcements_news = get_field('announcements_news');
 
-    $args = array(
-        'post_type' => 'post',
-        'taxonomy' => 'news',
-        'posts_per_page' => 3,
-        'orderby' => 'id',
-        'order' => 'DESC',
-    );
 
-    $post_loop = new WP_Query( $args );
+$args = array(
+    'post_type' => 'post',
+    'taxonomy' => 'news',
+    'posts_per_page' => 3,
+    'orderby' => 'id',
+    'order' => 'DESC',
+);
 
-
+$post_loop = new WP_Query( $args );
 
 ?>
 
