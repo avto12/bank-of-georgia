@@ -1,0 +1,15 @@
+.site-pages{
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  //background-color: $orange;
+
+
+  &__page-title{
+    padding: 9.0625rem 0;
+    color: $white;
+    font-family: $BOG-Headline-regular;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+  }
+}

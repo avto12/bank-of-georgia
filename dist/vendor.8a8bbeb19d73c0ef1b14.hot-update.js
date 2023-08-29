@@ -7,11 +7,11 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-self["webpackHotUpdateMaking_Science_Base_Theme"]("main",{},
+self["webpackHotUpdateMaking_Science_Base_Theme"]("vendor",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("bbdcd7714818578d3a4c")
+/******/ 	__webpack_require__.h = () => ("3c2dff6bb5b3a4bde45f")
 /******/ })();
 /******/ 
 /******/ }

@@ -11,20 +11,30 @@ get_header();
 
 global $wp_query;
 $posts = $wp_query->posts;
-
+$page_background = get_field('page_background', 'option');
 ?>
 
 	<main id="primary" class="site-main">
-
+        <?php if ($page_background): ?>
+            <?php if ( ! is_page('Who we are')): ?>
+                <div class="site-pages" <?php if ($page_background): ?> style="background-image: url('<?php echo $page_background['url']?>')" <?php endif; ?>>
+                    <h1 class="text-center site-pages__page-title">
+                        <?= is_post_type_archive('post') ? "News" : single_cat_title() ?>
+                    </h1>
+                </div>
+            <?php endif; ?>
+        <?php endif ?>
 		<div class="container">
-            <h1 class="archive-post__title"><?= is_post_type_archive('post') ? "News" : single_cat_title() ?></h1>
+<!--            <h1 class="archive-post__title">--><?php //= is_post_type_archive('post') ? "News" : single_cat_title() ?><!--</h1>-->
             <div class="archive-post__card-grid">
             <?php foreach($posts as $key => $post): ?>
                 <?php if($key == 0): ?>
                     <div class="archive-post__card-main">
-                        <a href="<?= get_permalink($post)?>">
-                            <img class="archive-post__card-main-image" src="<?= get_the_post_thumbnail_url($post->ID) ?>" alt="">
-                        </a>
+                        <?php if (get_the_post_thumbnail_url($post->ID)): ?>
+                            <a href="<?= get_permalink($post)?>">
+                                <img class="archive-post__card-main-image" src="<?= get_the_post_thumbnail_url($post->ID) ?>" alt="">
+                            </a>
+                        <?php endif; ?>
                         <div class="archive-post__card-info">
                             <div class="archive-post__card-publish">
                                 <?php $category = get_the_category($post->ID) ?>
@@ -46,9 +56,11 @@ $posts = $wp_query->posts;
 
                     <?php if($key != 0): ?>
                         <div class="archive-post__card-secondary">
-                            <a href="<?= get_permalink($post)?>">
-                                <img src="<?= get_the_post_thumbnail_url($post->ID) ?>" alt="">
-                            </a>
+                            <?php if (get_the_post_thumbnail_url($post->ID)): ?>
+                                <a href="<?= get_permalink($post)?>">
+                                    <img src="<?= get_the_post_thumbnail_url($post->ID) ?>" alt="">
+                                </a>
+                            <?php endif; ?>
                             <div class="archive-post__card-info">
                                 <div class="archive-post__card-publish">
                                     <?php $category = get_the_category($post->ID) ?>

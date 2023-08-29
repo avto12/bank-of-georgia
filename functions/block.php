@@ -70,6 +70,16 @@ function my_acf_init()
             'keywords' => array('Interested', 'Interested'),
         ));
 
+        acf_register_block(array(
+            'name' => 'tab-page',
+            'title' => __('Tab-Page'),
+            'description' => __('Tab Page block.'),
+            'render_callback' => 'my_acf_block_render_callback',
+            'category' => 'Tab Page',
+            'icon' => 'welcome-widgets-menus',
+            'keywords' => array('Tab', 'Page'),
+        ));
+
 
     }
 }

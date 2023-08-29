@@ -177,6 +177,7 @@ add_filter( 'body_class', 'add_slug_body_class' );
 require_once(__DIR__ . "/functions/block.php");
 require_once(__DIR__ . "/functions/ajaxcalls.php");
 require_once(__DIR__ . "/functions/menu/menu-walker.php");
+require_once(__DIR__ . "/template-parts/post-type.php");
 
 
 

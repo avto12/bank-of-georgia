@@ -11,7 +11,7 @@ $announcements_news = get_field('announcements_news');
 
 $args = array(
     'post_type' => 'post',
-    'taxonomy' => 'news',
+    'category_name' => 'news-announcements',
     'posts_per_page' => 3,
     'orderby' => 'id',
     'order' => 'DESC',
@@ -47,7 +47,9 @@ $post_loop = new WP_Query( $args );
                     <?php echo  esc_html($latest_title); ?>
                 </button>
             </li>
-            <li class="latest-news__tab-item--btn">|</li>
+            <?php if ($latest_title || $last_news): ?>
+                <li class="latest-news__tab-item--btn">|</li>
+            <?php endif; ?>
             <li class="nav-item latest-news__tab-item" role="presentation">
                 <button class="nav-link border-0 p-0 latest-news__tab-item--btn"
                         id="announcements-news-tab"
@@ -76,9 +78,9 @@ $post_loop = new WP_Query( $args );
                                     <a class="latest-news__post-title"
                                        href="<?php the_permalink($last_news_post->ID); ?>"><?php echo $last_news_post->post_title; ?></a>
                                     <span class="latest-news__line-arrow">
-                                    <img class="latest-news__arrow-img"
-                                         src="<?= get_template_directory_uri(); ?>/_/img/arrow-right.png"  alt="arrow-right" />
-                                </span>
+                                        <img class="latest-news__arrow-img"
+                                             src="<?= get_template_directory_uri(); ?>/_/img/arrow-right.png"  alt="arrow-right" />
+                                    </span>
                                 </div>
                                 <div class="latest-news__bottom-line"></div>
                             </div>

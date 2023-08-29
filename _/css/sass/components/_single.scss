@@ -1,56 +1,64 @@
 .post-single {
+  padding: 2.5rem 0 7.5rem 0;
+
+  &__information-content{
+    max-width: 47.125rem;
+    margin: auto;
+  }
+
   &__info {
     display: flex;
-    gap: 0.75rem;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.3125rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+
   }
 
   &__category {
+    color: $orange;
     font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    letter-spacing: 0.125rem;
-    text-transform: uppercase;
+    font-size: 1rem;
+    text-transform: capitalize;
     text-decoration: none;
-    transition: .2s;
+    font-family: $BOG-medium;
+    transition: .3s;
 
     &:hover {
-      color: $green;
-      opacity: 1;
+      color: $orange;
+    }
+  }
+
+
+  &__title {
+    font-weight: 600;
+    font-size: 2rem;
+    text-align: start;
+    font-family: $BOG-Headline-semiBold;
+    margin: 0;
+    @media all and (max-width: $tabletScreen) {
+      font-size: 2rem;
+      line-height: 2.5625rem;
+      text-align: start;
     }
   }
 
   &__date {
+    color: $light_black;
     font-weight: 400;
     font-size: 0.875rem;
-    line-height: 1.25rem;
-    letter-spacing: 0.125rem;
     text-transform: uppercase;
-  }
-
-  &__title {
-    font-weight: 500;
-    font-size: 2.5rem;
-    line-height: 3.1875rem;
-    text-align: center;
-    max-width: 46.875rem;
-    margin: 0 auto 3rem;
-    @media all and (max-width: $tabletScreen) {
-      font-size: 2rem;
-      line-height: 2.5625rem;
-      text-align: left;
-      margin: 0;
-      margin-bottom: 2rem;
+    span{
+      text-transform: none;
+      font-family: $BOG-regular;
     }
   }
 
   &__image {
     width: 100%;
-    height: 37.5rem;
-    object-fit: cover;
-    margin-bottom: 3rem;
+    height: 37rem;
+    object-fit: contain;
+    margin: 1rem 0;
+    border-radius: 1.5625rem;
     @media all and (max-width: $tabletScreen) {
       height: 13.3125rem;
       margin-bottom: 1.25rem;
@@ -58,23 +66,26 @@
   }
 
   &__content {
-    max-width: 62.5rem;
-    margin: 0 auto;
-    margin-bottom: 7rem;
-
+    margin: 2.5rem auto 5rem auto;
+    color: $black;
+    font-family: $BOG-regular;
+    font-size: 1rem;
+    font-weight: 400;
     a {
-      color: $green;
+      color: $orange;
     }
   }
 
   &__related {
     margin-bottom: 3.1875rem;
 
+
     &-title {
-      font-weight: 500;
+      font-weight: 600;
       font-size: 2rem;
-      line-height: 2.5625rem;
-      margin-bottom: 3.84375rem;
+      text-align: center;
+      font-family: $BOG-Headline-semiBold;
+      margin-bottom: 2.5rem;
       @media all and (max-width: $tabletScreen) {
         margin-bottom: 2rem;
       }
@@ -82,40 +93,176 @@
 
     &-wrapper {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3.125rem;
-      @media all and (max-width: $tabletScreen) {
-        grid-template-columns: 1fr;
-      }
+      gap: 3.375rem;
+
     }
 
-    &-card {
-      .post-single__info {
-        margin-bottom: 0.6875rem;
-        justify-content: start;
-      }
 
-      &-image {
-        height: 13.3125rem;
-        width: 100%;
-        object-fit: cover;
-        margin-bottom: 1.25rem;
-      }
 
-      &-title {
-        a {
-          font-weight: 400;
-          font-size: 24px;
-          line-height: 130%;
-          margin: 0;
-          text-decoration: none;
-          transition: .2s;
+    &-post{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      &:hover{
+        .post-single__related-link{
+          color: $orange !important;
+        }
 
-          &:hover {
-            color: $green;
+
+        .post-single__bottom-line {
+          transition: 0.5s;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            transform-origin: left;
+            background: $orange;
+            animation: lineAnimate 1s ease;
+          }
+
+          @keyframes lineAnimate {
+            0% {
+              transform: scaleX(0);
+            }
+            100% {
+              transform: scaleX(1);
+              transform-origin: left;
+            }
+
+          }
+        }
+
+        .post-single__line-arrow{
+          transition: 0.5s;
+          &:after{
+            content: "";
+            display: flex;
+            width: 15px;
+            height: 2px;
+            position: absolute;
+            right: 7px;
+            bottom: 45px;
+            background: $black;
+            animation: lineAnimateArrow 0.5s linear;
+          }
+
+          @keyframes lineAnimateArrow {
+            0%{
+              transform: scaleX(0);
+              transform-origin: right;
+            }
+            100% {
+              transform: scaleX(1);
+              transform-origin: right;
+            }
+
           }
         }
       }
+
+
+      &-image {
+        height: 13.3125rem;
+        border-radius: 1.5625rem;
+        width: 100%;
+        object-fit: contain;
+        margin-bottom: 1.25rem;
+      }
+
+
+
+      &-title {
+        width: 100%;
+
+        a {
+          color: $black;
+          font-family: $BOG-Headline-semiBold;
+          font-weight: 600;
+          font-size: 1.5rem;
+          margin: 0;
+          text-decoration: none;
+          transition: .3s;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+
+
+  &__related-date{
+    color: $black;
+    /* BOG 2018 Reg 14 */
+    font-family: $BOG-regular;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  &__line-arrow{
+
+    &:after{
+      content: "";
+      display: flex;
+      width: 15px;
+      height: 2px;
+      position: absolute;
+      right: 7px;
+      bottom: 45px;
+      animation: lineAnimateArrowOut 0.5s linear;
+    }
+
+    @keyframes lineAnimateArrowOut {
+      0%{
+        transform: scaleX(1);
+        transform-origin: right;
+        background: $black;
+      }
+      100% {
+        transform: scaleX(0);
+        transform-origin: right;
+      }
+
+    }
+  }
+
+  &__arrow-img{
+    width: 24px;
+    height: 24px;
+  }
+
+
+
+  &__bottom-line{
+    transition: 0.5s;
+    width: 100%;
+    height: 1px;
+    background: #DADADA;
+    margin-top: 25px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      transform-origin: left;
+      animation: lineAnimateOut 0.5s ease;
+    }
+
+    @keyframes lineAnimateOut {
+      0% {
+        transform: scaleX(1);
+        transform-origin: left;
+        background: $orange;
+      }
+      100% {
+        transform: scaleX(0);
+      }
+
     }
   }
 }
